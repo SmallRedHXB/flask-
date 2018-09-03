@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}发布问答详情{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/quesdetail.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="quesdetail-con">
+    <h3 class="h-quesdetail">{{ question.title }}</h3>
+    <p class="author-time h-quesdetail">
+        <span>作者：{{ question.author.username }}</span>
+        <span>时间：{{ question.create_time }}</span>
+    </p>
+    <hr>
+    <span>{{ question.content }}</span>
+    <hr>
+    <h4>评论({{ question_num }})：</h4>
+    <form action="{{ url_for('answer') }}" method="POST" id="form1" onsubmit="return check()">
+        <div class="form-quesdetail">
+            <div class="form-group">
+                <input id="answer" type="text" class="form-control"  placeholder="请填写评论" name="anwser">
+            </div>
+            <input type="hidden", name = 'question_id', value="{{ question.id }}">
+            <div class="form-group btn-quesdetail" style="text-align: right">
+                <button class="btn btn-primary">
+                    评论
+                </button>
+            </div>
+            <ul>
+                {% for answer in question.answers %}
+                <li>
+                    <div>
+                        <div class="answer-userinfo">
+                            <img src="{{url_for('static', filename='images/ques.png')}}" alt="" width="50px;">
+                            <span class="answer-author">{{ answer.author.username }}</span>
+                            <span class="answer-time">{{ answer.create_time }}</span>
+                        </div>
+                        <p class="answer-content">{{ answer.content }}</p>
+                        
+                    </div>
+                </li>
+                
+                <!-- <span style="clear: both;"></span>
+                <p class="p-overflow" style="border: 1px solid #eee;"></p> -->
+                {% endfor %}
+            </ul>
+        </div>
+    </form>
+</div>
+{% endblock %}
+{% block script %}
+    <script>
+        function check() {
+            var answer = document.getElementById("answer").value;
+            if (answer == null || answer == '') {
+                alert("用户名不能为空");
+                return false;
+            }
+            return true;
+        }
+    </script>
+{% endblock %}

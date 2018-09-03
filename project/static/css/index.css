@@ -1,0 +1,41 @@
+ul{
+    list-style: none;
+    padding-left: 0px !important;
+}
+
+.ul-content li{
+    border: 1px solid #eee;
+    overflow: hidden;
+    padding: 16px 0;
+}
+
+.img-content{
+    width: 50px;
+    height: 100%;
+    float: left;
+}
+
+.content{
+    float: left;
+    margin-left: 10px;
+    width: 660px;
+}
+
+.a-ques-title{
+    text-decoration: none;
+    cursor: pointer;
+    color: #259;
+    font-weight: 900;
+}
+
+.a-ques-title:hover{
+    text-decoration: none;
+}
+
+.ques-info{
+    text-align: right;
+}
+
+.ques-auth{
+    margin-right: 20px;
+}

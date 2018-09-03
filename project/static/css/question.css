@@ -1,0 +1,10 @@
+.form-question{
+    width: 500px;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    color: red;   
+}
+
+.h-question{
+    text-align: center;
+}

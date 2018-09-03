@@ -1,0 +1,38 @@
+.quesdetail-con{
+    width: 94%;
+    margin: 0 auto;
+}
+
+.h-quesdetail{
+    text-align: center;
+}
+
+.quesdetail-con ul{
+    list-style: none;
+    padding-left: 0px !important;
+}
+
+
+.quesdetail-con li{
+    /* border: 1px solid #eee; */
+    overflow: hidden;
+    padding: 16px 0;
+}
+
+.answer-userinfo{
+    font-size: 16px;
+    color: #9b9b9b;
+}
+
+.answer-author{
+    margin-left: 10px;
+}
+
+.answer-time{
+    float: right;
+}
+
+.answer-content{
+    margin-top: 10px;
+    margin-left: 60px;
+}
